@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic Game Store | Game Details</title>
+    <link rel="icon" type="image/x-icon" href="favicon.jpg">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="game details.css">
+</head>
+
+<body onload="getQueryParams()" style="background-color: rgb(35, 35, 35)">
+
+    <!-- Nav Bar start -->
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: black;">
+        <div class="container">
+            <a href="index.html" class="navbar-brand text-primary">
+                <h3>Epic Games</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
+                aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav ms-2">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Discover</a></li>
+                    <li class="nav-item"><a href="all games.html" class="nav-link">Browse</a></li>
+                    <li class="nav-item"><a href="terms&con.html" class="nav-link">Help</a></li>
+                </ul>
+                <!-- <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+
+                <a href="#" class="ms-auto me-3"><button class="btn btn-info">Sign In</button></a>
+                <a href="cart.html" class="navcart"><i class="fa-solid fa-cart-shopping"></i></a>
+                <span class="ccou" id="ccou"></span>
+            </div>
+        </div>
+    </nav>
+    <!-- Nav Nar End -->
+
+    <!-- <img src="game img/mk1/mk1.jpg" alt="mk1" width="80%"> -->
+
+    <!-- Game details start -->
+    <div class="row mt-2" style="display: flex; justify-content: center;">
+        <div class="col-lg-6 ">
+            <div class="row">
+                <!-- left btn -->
+                <div class="col-lg-1" style="display: flex; justify-content: center; align-items: center;">
+                    <button class="carousel-control-prev laro" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev" style=" width: 70px; height: 400px; margin-left: 60px; margin-top: 75px;">
+                        <span class="" aria-hidden="true"
+                            style="border: 4px solid; padding: 10px; border-radius: 40px;"><i
+                                class="fa-solid fa-angle-left" style="font-size: 40px;"></i></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                </div>
+                <div class="col-lg-10">
+                    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                        <!-- Wrapper for Slides -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img id="gimg1" class="d-block" alt="p1" width="100%" height="400px">
+                            </div>
+                            <div class="carousel-item">
+                                <img id="gimg2" class="d-block" alt="p2" width="100%" height="400px">
+                            </div>
+
+                            <div class="carousel-item">
+                                <img class="d-block" id="gimg3" alt="p3" width="100%" height="400px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- right btn -->
+                <div class="col-lg-1">
+                    <button class="carousel-control-next raro" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next" style="width: 60px; height: 400px; margin-top: 75px; margin-right: 697px;">
+                        <span class="" aria-hidden="true"
+                            style="border: 4px solid; padding: 10px; border-radius: 40px;"><i
+                                class="fa-solid fa-angle-right" style="font-size: 40px;"></i></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 p-3 ps-5" style="color: white;">
+            <h3 id="gamen"></h3>
+            <span class="fpri" id="finalp"></span>
+            <span class="apri" id="actp"></span>
+            <div class="edi">Edition : <span class="edi" id="edi"></span></div>
+            <div class="plat">Platform : <span class="plat" id="plat"></span></div>
+            <button type="button" class="atcb" id='gdatc'><i class="fa-solid fa-cart-shopping cartbut"></i> Add To Cart</button>
+            <a href="cart.html" style="text-decoration: none; color: black;" id="buyn"><button type="button" class="bnow" id="gdbuy">Buy Now</button></a>
+        </div>
+    </div>
+    <!-- Game details end -->
+
+    <div class="row mt-5" style="display: flex; justify-content: center;">
+        <div class="col-lg-11">
+            <div class="row">
+                <div class="col-lg-2 col-md-3 govr" id="gover">Game Overview</div>
+                <div class="col-lg-2 col-md-3 pdet ms-2" id="pdet">Product Details</div>
+                <div class="col-lg-3 col-md-3 sreq ms-2" id="sreq">System Requirements</div>
+                <!-- <div>Element X (not focusable)</div>
+                <div class="pdet" tabindex="0">Element Y (user or script focusable)</div>
+                <div class="pdet" tabindex="-1" id="scripted">Element Z (script-only focusable)</div>
+                <div class="pdet" id="test"></div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Game overview start -->
+    <div class="row orow" id="orow">
+        <div class="col-lg-11 border">
+            <ul id="a1">
+                <li class="pt-4">"<span id="gdesc"></span>" is plagued by widespread inequality, and one samurai will
+                    change the course of history in his search for justice.</li>
+                <li class="pt-2">Take up the sword of Sakamoto Ryoma and venture to Kyoto to find your father killer,
+                    clear yourself of a framed murder, and restore your honor.</li>
+                <li class="pt-2 pb-3">Draw your blade, load your revolver, and join the revolution in this heated
+                    historical adventure that only the creators of Yakuza: Like a Dragon could produce.</li>
+            </ul>
+        </div>
+    </div>
+    <!-- game overview end -->
+
+    <!-- Product details start -->
+    <div class="row drow" id="drow">
+        <div class="col-lg-11 col-md-11">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Genre : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Action</div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Language : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">English</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Age Group : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">18+</div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Released On : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">26-Jul-2014</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-4 col-4 border pt-2 pb-2 ps-2">Manufacturer : </div>
+                <div class="col-lg-10 col-md-10 col-sm-8 col-8 border pt-2 pb-2 ps-2">Sega Europe Ltd. 27 Great West
+                    Road Brentford Middlesex TW8 9BW United Kingdom</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-4 col-4 border pt-2 pb-2 ps-2">Importer : </div>
+                <div class="col-lg-10 col-md-10 col-sm-8 col-8 border pt-2 pb-2 ps-2">e-xpress Interactive Software Pvt
+                    Ltd, 401,Western Edge I, Western Express Highway, Borivali East, Mumbai, 400066</div>
+            </div>
+        </div>
+    </div>
+    <!-- product details end -->
+
+    <!-- sys req  start -->
+    <div class="row srow" id="srow">
+        <div class="col-lg-11 col-md-11">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Minimum Requirements : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Windows 7,Windows 8.1,Windows 10
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Recommended Requirements : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Windows 8.1,Windows 10</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">OS : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Intel Core i3 2100 or AMD A8-6500
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">OS : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Intel Core i5 4670 or AMD A10-7850K
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Memory : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">4 GB RAM</div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Memory : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">8 GB RAM</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Graphics : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">NVIDIA GTX 960 (4 GB) or AMD R9 290X
+                    (4 GB)</div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Graphics : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">NVIDIA GTX 1060 (6 GB) or AMD RX 570
+                    (4 GB)</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">DirectX : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Version 11</div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">DirectX : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Version 11</div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Storage : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2" id="gspc"></div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Storage : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2" id="gspac"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Others : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Requires a 64-bit processor and
+                    operating system; DirectX feature level 11_1 required</div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Others : </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-3 border pt-2 pb-2 ps-2">Requires a 64-bit processor and
+                    operating system; DirectX feature level 11_1 required</div>
+            </div>
+        </div>
+    </div>
+    <!-- sys req start -->
+
+    <!-- Explore more start -->
+    <div class="mt-2 ps-5 pe-5">
+        <div style="font-size: 28px; font-weight: 500; color: white; margin-bottom: -10px;">Explore More</div>
+
+        <div class="row" id="emore">
+            <!-- <div class="col-lg-2 me-4 col-md-3 col-5">
+                <div class="card">
+                    <img src="card image/watch d.jpg" alt="watch dogs" style="object-fit: fill; border-top-left-radius : 5px; border-top-right-radius: 5px;">
+                    <div class="gname">card 1</div><hr>
+                    <div class="row p-1" style="display: flex; justify-content: center; margin-top: -10px;">
+                        <div class="col-lg-3 col-md-5 dis" id="disc">-60%</div>
+                        <div class="col-lg-4 col-md-6 apri1" id="aprice">₹2499.00</div>
+                        <div class="col-lg-4 fpri1" id="fprice">₹999.00</div>
+                    </div>
+                    <div class="row ms-2 mb-2">
+                        <div class="col-lg-10 col-md-9"><button type="button" class="atc"><i class="fa-solid fa-cart-shopping"></i> Add To Cart</button></div>
+                        <div class="col-lg-2 col-md-3"><button type="button" class="lbtn"><i class="fa-regular fa-heart heart"></i></button></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-5">
+                <div class="card">
+                    <img src="card image/watch d.jpg" alt="watch dogs" style="object-fit: fill;">
+                    <div class="col-lg-12 p-1">nithish</div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <!-- explore more end -->
+
+    <!-- footer start -->
+    <div class="foot p-5 pb-4 mt-4" style="background-color: black;">
+        <div class="row fcon d-flex"
+            style="width: 1200px; border-top: 5px solid white; border-bottom:  5px solid white;">
+            <div class="col-lg-4 col-md-4 mt-5 mb-5 fcol1" style="padding-left: 150px;">
+                <p style="font-size: 22px; font-weight: 500; margin-bottom: 3px; color: limegreen;">COMPANY</p>
+                <div style="margin-top: 15px;"><a href="index.html" class="lnk">Home</a></div>
+                <div style="margin-top: 15px;"><a href="terms&con.html" class="lnk">About Us</a></div>
+                <div style="margin-top: 15px;"><a href="terms&con.html" class="lnk">Contact Us</a></div>
+            </div>
+            <div class="col-lg-4 col-md-4 mt-5 mb-5 fcol2" style="padding-left: 140px;">
+                <p style="font-size: 22px; font-weight: 500; margin-bottom: 3px; color: limegreen;">CUSTOMER
+                    SERVICES</p>
+                <div style="margin-top: 15px;"><a href="terms&con.html" class="lnk">Help/FAQ</a></div>
+                <div style="margin-top: 15px;"><a href="terms&con.html" class="lnk">Refund/Return</a></div>
+                <div style="margin-top: 15px;"><a href="terms&con.html" class="lnk">Terms & Condition</a></div>
+                <div style="margin-top: 15px;"><a href="terms&con.html" class="lnk">Privacy Policy</a></div>
+            </div>
+            <div class="col-lg-4 col-md-4 mt-5 mb-5 fcol3" style="padding-left: 160px;">
+                <p style="font-size: 22px; font-weight: 500; margin-bottom: 3px; color: limegreen;">ACCOUNT</p>
+                <div style="margin-top: 15px;"><a href="cart.html" class="lnk">Cart</a></div>
+                <div style="margin-top: 15px;"><a href="cart.html" class="lnk">Wishlist</a></div>
+                <div style="margin-top: 15px;"><a href="cart.html" class="lnk">Orders</a></div>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex;  background-color: black;">
+        <div class="d-flex pmeth" style="margin-left: 160px; height: 70px;">
+            <img src="upi/visa.png" alt="visa" width="60px" height="20px" class="me-2 mt-2">
+            <img src="upi/ms card.png" alt="ms card" width="60px" height="34px" class="me-2">
+            <img src="upi/rupay.png" alt="rupay" width="60px" height="20px" class="me-2 mt-2">
+            <img src="upi/upi-logo.png" alt="upi" width="60px" height="20px" class="me-2 mt-2">
+        </div>
+
+
+        <div class="d-flex ms-auto smedia" style="margin-right: 160px; margin-top: -5px;">
+            <p style="color: white; font-size: 24px; font-weight: 500;" class="me-2">Connect With Us</p>
+            <img src="upi/whatsapp.png" alt="whatsapp" width="30px" height="30px" class="me-2">
+            <img src="upi/fb.png" alt="fb" width="30px" height="30px" class="me-2">
+            <img src="upi/insta.png" alt="insta" width="30px" height="30px" class="me-2">
+            <img src="upi/X_white.png" alt="x" width="30px" height="30px" class="me-2">
+        </div>
+    </div>
+    <div style="background-color: black; color: white;">
+        <div class="copyright">Copyright &#169; 2024 Epic Games Pvt Ltd. All rights reserved</div>
+    </div>
+    <!-- footer end -->
+
+
+
+
+    <script src="js/all.min.js"></script>
+    <script src="bootstrap.bundle.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
